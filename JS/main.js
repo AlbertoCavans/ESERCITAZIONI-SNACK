@@ -1,12 +1,18 @@
 // Const-Elements
-const longerWord = document.querySelector(".text-danger");
-const firstWord = prompt("Scrivi una parola");
-const secondWord = prompt("Scrivi un'altra parola");
+let totNumber = document.querySelector(".text-primary");
+let arrayNumbers = [];
+let partialTot = 0;
 
-if (firstWord.length < secondWord.length) {
-  longerWord.innerHTML = `La parola più lunga è la seconda`;
-} else if (secondWord.length < firstWord.length) {
-  longerWord.innerHTML = `La parola più lunga è la prima`;
-} else {
-  longerWord.innerHTML = "Le due parole sono lunghe uguali";
+while (arrayNumbers.length < 10) {
+  let factorNumber = parseInt(prompt("Scrivi un numero"));
+
+  console.log(factorNumber);
+  console.log(typeof factorNumber);
+  partialTot += factorNumber;
+  console.log(partialTot);
+  arrayNumbers.push(factorNumber);
+  console.log(arrayNumbers);
+  totNumber.innerHTML += `<li class="text-primary">${factorNumber}</li>`;
 }
+
+totNumber.innerHTML += `<li class="text-danger">Tot: ${partialTot}</li>`;
