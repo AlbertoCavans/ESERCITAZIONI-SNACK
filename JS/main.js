@@ -1,22 +1,12 @@
 // Const-Elements
-const bigNumb = document.querySelector(".text-danger");
-const firstNumb = parseInt(prompt("Scrivi un numero"));
-const secondNumb = parseInt(prompt("Scrivi un altro numero"));
+const longerWord = document.querySelector(".text-danger");
+const firstWord = prompt("Scrivi una parola");
+const secondWord = prompt("Scrivi un'altra parola");
 
-console.log(typeof firstNumb);
-console.log(secondNumb);
-
-if (!isNaN(secondNumb) && !isNaN(firstNumb)) {
-  if (firstNumb < secondNumb) {
-    console.log(bigNumb);
-    bigNumb.innerHTML = "Il numero maggiore è il secondo";
-  } else if (secondNumb < firstNumb) {
-    bigNumb.innerHTML = "Il numero maggiore è il primo";
-    console.log(bigNumb);
-  } else {
-    bigNumb.innerHTML = "I due numeri sono uguali";
-    console.log(bigNumb);
-  }
+if (firstWord.length < secondWord.length) {
+  longerWord.innerHTML = `La parola più lunga è la seconda`;
+} else if (secondWord.length < firstWord.length) {
+  longerWord.innerHTML = `La parola più lunga è la prima`;
 } else {
-  bigNumb.innerHTML = "Devi inserire dei numeri interi, non simboli o lettere";
+  longerWord.innerHTML = "Le due parole sono lunghe uguali";
 }
