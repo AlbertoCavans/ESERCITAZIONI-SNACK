@@ -1,21 +1,15 @@
-const secretList = ["Mike", "Teto", "Nico", "Giada", "Rovvi", "Albe"];
-const result = document.querySelector(".text-primary");
-let userName = prompt("Scrivi il tuo nome");
-let userInvited = false;
+const numbs = [4, 5, 3, 1, 11, 21, 30, 0, 2, 44, 19, 99, 100, 2, 3, 1];
 
-for (let i = 0; i < secretList.length; i++) {
-  const listMember = secretList[i];
+const even = [];
+const odds = [];
 
-  if (listMember == userName) {
-    console.log(userName);
-    console.log(listMember);
-    userInvited = true;
-    console.log(userInvited);
-  }
-
-  if (userInvited) {
-    result.innerText = "Fai parte della lista";
+for (let i = 0; i < numbs.length; i++) {
+  let numb = numbs[i];
+  if (numb % 2 == 0) {
+    even.push(numb);
   } else {
-    result.innerText = "Non fai parte della lista";
+    odds.push(numb);
   }
 }
+console.log(even);
+console.log(odds);
