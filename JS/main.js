@@ -1,15 +1,12 @@
-const numbs = [4, 5, 3, 1, 11, 21, 30, 0, 2, 44, 19, 99, 100, 2, 3, 1];
+const randomizerButton = document.querySelector(".btn-primary");
 
-const even = [];
-const odds = [];
+function getRandomNumber() {
+  const printedNumber = document.querySelector(".text-primary");
 
-for (let i = 0; i < numbs.length; i++) {
-  let numb = numbs[i];
-  if (numb % 2 == 0) {
-    even.push(numb);
-  } else {
-    odds.push(numb);
-  }
+  let numb = Math.floor(Math.random() * 100);
+  console.log(numb);
+  printedNumber.innerText = numb;
+  return;
 }
-console.log(even);
-console.log(odds);
+
+randomizerButton.addEventListener("click", getRandomNumber);
