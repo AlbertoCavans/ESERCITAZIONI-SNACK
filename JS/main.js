@@ -1,55 +1,30 @@
-const randomizerButton = document.querySelector(".btn-primary");
-const minNumber = document.getElementById("min");
-const maxNumber = document.getElementById("max");
-let maxNumb = 0;
-let minNumb = 0;
+const myArray = [2, 5, 6, 7, 8, 8, 5, 4, 3, 2, 1, 5];
+const myNumber = 5;
+let counter = 0;
 
-function newMaxNumbs() {
-  maxNumb = parseInt(prompt("Scrivi il numero maggiore del range desiderato"));
-  if (isNaN(maxNumb)) {
-    alert("Devi inserire un numero!");
-    maxNumb = parseInt(
-      prompt("Scrivi il numero maggiore del range desiderato")
-    );
+const myNumb = document.getElementById("myNumber");
+const myNumbers = document.getElementById("numbersArray");
+const countButton = document.querySelector("btn-primary");
+
+// Print myArray
+let listNumbers = "";
+for (let i = 0; i < myArray.length; i++) {
+  if (i < myArray.length - 1) {
+    listNumbers += myArray[i] + " - ";
   } else {
-    console.log(maxNumb);
-    return maxNumb;
+    listNumbers += myArray[myArray.length - 1] + ".";
   }
 }
+myNumbers.innerText = listNumbers;
 
-function newMinNumbs() {
-  minNumb = parseInt(prompt("Scrivi il numero minore del range desiderato"));
-  if (isNaN(minNumb)) {
-    alert("Devi inserire un numero!");
-    minNumb = parseInt(prompt("Scrivi il numero minore del range desiderato"));
-  } else if (minNumb > maxNumb) {
-    alert("Devi inserire un numero minore rispetto al maggiore del range!");
-    minNumb = parseInt(prompt("Scrivi il numero minore del range desiderato"));
-  } else {
-    console.log(minNumb);
-    return minNumb;
+// Print myNumber
+myNumb.innerText = myNumber;
+
+countButton.addEventListener("click", function () {
+  for (let i = 0; i < myArray.length; i++) {
+    if (myArray[i] == myNumber) {
+      counter++;
+      console.log(counter);
+    }
   }
-}
-
-newMaxNumbs();
-newMinNumbs();
-
-minNumber.innerText = minNumb;
-maxNumber.innerText = maxNumb;
-
-console.log(maxNumb);
-console.log(minNumb);
-
-function getRandomNumber(max, min) {
-  const printedNumber = document.querySelector(".text-primary");
-  console.log(maxNumb);
-  console.log(minNumb);
-  let numb = Math.floor(Math.random() * max) + min;
-  console.log(numb);
-  printedNumber.innerText = numb;
-  return;
-}
-
-randomizerButton.addEventListener("click", function () {
-  getRandomNumber(maxNumb, minNumb);
 });

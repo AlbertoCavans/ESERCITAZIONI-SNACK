@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carosello JS con array</title>
+    <title>Snacks</title>
 
     <!-- Link Font Awesome -->
     <link
@@ -44,17 +44,19 @@
 
   <body>
     <div class="container my-4">
-      <h1>Snack getRandomNumber function</h1>
+      <h1>Snack - count your number</h1>
       <!-- <ul>
         <li class="text-primary"></li>
       </ul> -->
       <p>
-        Come massimo e minimo hai scelto rispettivamente
-        <span id="max" class="text-danger h5"></span> e
-        <span class="text-danger h5" id="min"></span>
+        Il tuo insieme di numeri è
+        <span class="text-danger h5" id="numbersArray"></span>
       </p>
-      <p>Il tuo numero randomico è <span class="text-primary h5"></span></p>
-      <button class="btn btn-primary">Randomizer</button>
+      <p>
+        Il numero di cui devi trovare le ripetizioni è
+        <span class="text-primary h5" id="myNumber"></span>
+      </p>
+      <button class="btn btn-primary">Count</button>
       <a href="index.html" class="btn btn-danger">Reset</a>
     </div>
   </body>
