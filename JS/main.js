@@ -4,7 +4,8 @@ let counter = 0;
 
 const myNumb = document.getElementById("myNumber");
 const myNumbers = document.getElementById("numbersArray");
-const countButton = document.querySelector("btn-primary");
+const countButton = document.querySelector(".btn-primary");
+const printResult = document.querySelector(".text-success");
 
 // Print myArray
 let listNumbers = "";
@@ -20,11 +21,18 @@ myNumbers.innerText = listNumbers;
 // Print myNumber
 myNumb.innerText = myNumber;
 
-countButton.addEventListener("click", function () {
-  for (let i = 0; i < myArray.length; i++) {
-    if (myArray[i] == myNumber) {
+// Count function
+function countNumber(startArray, countingNumber) {
+  for (let i = 0; i < startArray.length; i++) {
+    if (startArray[i] == countingNumber) {
       counter++;
-      console.log(counter);
     }
   }
+  console.log(counter);
+  printResult.innerText = counter;
+  return counter;
+}
+
+countButton.addEventListener("click", function () {
+  countNumber(myArray, myNumber);
 });
