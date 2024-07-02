@@ -1,6 +1,5 @@
 const myArray = [2, 5, 6, 7, 8, 8, 5, 4, 3, 2, 1, 5];
 const myNumber = 5;
-let counter = 0;
 
 const myNumb = document.getElementById("myNumber");
 const myNumbers = document.getElementById("numbersArray");
@@ -23,6 +22,8 @@ myNumb.innerText = myNumber;
 
 // Count function
 function countNumber(startArray, countingNumber) {
+  let counter = 0;
+
   for (let i = 0; i < startArray.length; i++) {
     if (startArray[i] == countingNumber) {
       counter++;
