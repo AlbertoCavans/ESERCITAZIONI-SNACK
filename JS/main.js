@@ -39,7 +39,7 @@ countButton.addEventListener("click", function () {
   countNumber(myArray, myNumber);
 }); */
 
-// ! Add numbers until the user submit "zero"
+/* // ! Add numbers until the user submit "zero"
 const printResult = document.getElementById("result");
 let printArray = document.getElementById("myArray");
 const userNumbers = [];
@@ -82,4 +82,25 @@ for (let i = 0; i < userNumbers.length; i++) {
   }
 }
 
-printResult.innerText = result;
+printResult.innerText = result; */
+
+// ! Print array with separator
+
+const printResult = document.getElementById("result");
+let printArray = document.getElementById("myArray");
+const startArray = ["Il", "mio", "nome", "è", "Alberto"];
+
+for (i = 0; i < startArray.length; i++) {
+  console.log(startArray[i]);
+  printArray.innerHTML += `<li class="text-primary">${startArray[i]}</li>`;
+}
+
+for (i = 0; i < startArray.length; i++) {
+  if (i < startArray.length - 1) {
+    console.log(startArray[i]);
+    printResult.innerText += startArray[i] + " ";
+  } else {
+    console.log(startArray[i]);
+    printResult.innerText += startArray[i] + ".";
+  }
+}
