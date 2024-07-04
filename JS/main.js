@@ -84,7 +84,7 @@ for (let i = 0; i < userNumbers.length; i++) {
 
 printResult.innerText = result; */
 
-// ! Print array with separator
+/* // ! Print array with separator
 
 const printResult = document.getElementById("result");
 let printArray = document.getElementById("myArray");
@@ -103,4 +103,46 @@ for (i = 0; i < startArray.length; i++) {
     console.log(startArray[i]);
     printResult.innerText += startArray[i] + ".";
   }
+} */
+
+// ! FInd minor number
+let printArray = document.getElementById("myArray");
+const printResult = document.getElementById("result");
+
+const myArray = [5, 6, 3, 4, 6, 7, 8, 8, 5, 2, 4, 3];
+let minorNumber;
+
+let i = 0;
+while (i < myArray.length) {
+  console.log(myArray[i]);
+
+  if (i === 0) {
+    minorNumber = myArray[0];
+    console.log("yes-change-" + minorNumber);
+
+    /*     console.log("print-" + minorNumber);
+     */
+  } else {
+    /*     console.log("print-" + myArray[i]);
+     */
+    if (minorNumber < myArray[i]) {
+      console.log("no-change-" + minorNumber);
+    } else {
+      console.log("yes-change-" + minorNumber + "-into-" + myArray[i]);
+      minorNumber = myArray[i];
+    }
+  }
+  i++;
 }
+
+for (i = 0; i < myArray.length; i++) {
+  if (i < myArray.length - 1) {
+    console.log(myArray[i]);
+    printArray.innerText += myArray[i] + "-";
+  } else {
+    console.log(myArray[i]);
+    printArray.innerText += myArray[i] + ".";
+  }
+}
+
+printResult.innerText = minorNumber;
