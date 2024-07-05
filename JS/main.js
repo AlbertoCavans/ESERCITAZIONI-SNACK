@@ -105,31 +105,31 @@ for (i = 0; i < startArray.length; i++) {
   }
 } */
 
-// ! FInd minor number
+// ! FInd bigger number
 let printArray = document.getElementById("myArray");
 const printResult = document.getElementById("result");
 
 const myArray = [5, 6, 3, 4, 6, 7, 8, 8, 5, 2, 4, 3];
-let minorNumber;
+let biggerNumber;
 
 let i = 0;
 while (i < myArray.length) {
   console.log(myArray[i]);
 
   if (i === 0) {
-    minorNumber = myArray[0];
-    console.log("yes-change-" + minorNumber);
+    biggerNumber = myArray[0];
+    console.log("yes-change-" + biggerNumber);
 
-    /*     console.log("print-" + minorNumber);
+    /*     console.log("print-" + biggerNumber);
      */
   } else {
     /*     console.log("print-" + myArray[i]);
      */
-    if (minorNumber < myArray[i]) {
-      console.log("no-change-" + minorNumber);
+    if (biggerNumber < myArray[i]) {
+      console.log("yes-change-" + biggerNumber + "-into-" + myArray[i]);
+      biggerNumber = myArray[i];
     } else {
-      console.log("yes-change-" + minorNumber + "-into-" + myArray[i]);
-      minorNumber = myArray[i];
+      console.log("no-change-" + biggerNumber);
     }
   }
   i++;
@@ -145,4 +145,4 @@ for (i = 0; i < myArray.length; i++) {
   }
 }
 
-printResult.innerText = minorNumber;
+printResult.innerText = biggerNumber;
